@@ -198,16 +198,16 @@ pub fn from_porta(key: String, text: String) -> String {
 }
 
 #[wasm_bindgen]
-pub fn railfence(key: String, text: String) -> String {
-    let ciph = RailFence::new(&key);
+pub fn railfence(key: usize, text: String) -> String {
+    let ciph = RailFence::new(key);
     // encipher
     let ctext = ciph.encipher(&text).unwrap();
     ctext
 }
 
 #[wasm_bindgen]
-pub fn from_railfence(key: String, text: String) -> String {
-    let ciph = RailFence::new(&key);
+pub fn from_railfence(key: usize, text: String) -> String {
+    let ciph = RailFence::new(key);
     // decipher
     let ptext = ciph.decipher(&text).unwrap();
     ptext

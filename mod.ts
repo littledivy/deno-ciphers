@@ -24,6 +24,8 @@ import init, {
   from_polybiussquare as wasm_from_polybiussquare,
   porta as wasm_to_porta,
   from_porta as wasm_from_porta,
+  railfence as wasm_to_railfence,
+ from_railfence as wasm_from_railfence,
 } from "./wasm.js";
 
 await init(source);
@@ -142,4 +144,12 @@ export function toPorta(key: string, text: string): string {
 
 export function fromPorta(key: string, text: string): string {
   return wasm_from_porta(key, text);
+}
+
+export function toRailFence(key: number, text: string): string {
+  return wasm_to_railfence(key, text);
+}
+
+export function fromRailFence(key: string, text: string): string {
+  return wasm_from_railfence(new TextEncoder().encode(key), text);
 }
