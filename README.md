@@ -7,7 +7,7 @@ Encihper and Decipher implementation for Deno.
 - [x] Vigenere
 - [x] ADFGVX
 - [x] ADFGX
-- [ ] Affine
+- [x] Affine
 - [ ] Atbash
 - [ ] Autokey
 - [ ] Beaufort
