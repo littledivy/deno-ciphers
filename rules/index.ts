@@ -106,6 +106,14 @@ function Rules(fn: string, toCheck: any) {
       break;
     case "railfence":
       return !(toCheck <= 0);
+      break;
+    case "substitution":
+      return (
+        toCheck.length == 26 &&
+        !hasRepeatedCharacters(toCheck) &&
+        isAlphabetical(toCheck)
+      );
+      break;
     default:
       throw "Function not found";
       break;
