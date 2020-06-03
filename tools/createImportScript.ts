@@ -3,12 +3,12 @@ export default function createImportScript(name: string) {
   ${name.toLowerCase()} as wasm_to_${name.toLowerCase()},
   from_${name.toLowerCase()} as wasm_from_${name.toLowerCase()},
 
-  export function to${name}(a: number, b: number, text: string): string {
-    return wasm_to_${name.toLowerCase()}(a, b, text);
+  export function to${name}(key: string, text: string): string {
+    return wasm_to_${name.toLowerCase()}(key, text);
   }
 
-  export function from${name}(a: number, b: number, text: string): string {
-    return wasm_from_${name.toLowerCase()}(a, b, text);
+  export function from${name}(key: string, text: string): string {
+    return wasm_from_${name.toLowerCase()}(key, text);
   }`;
 }
 

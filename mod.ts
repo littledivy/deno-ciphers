@@ -12,6 +12,8 @@ import init, {
   from_atbash as wasm_from_atbash,
   autokey as wasm_to_autokey,
   from_autokey as wasm_from_autokey,
+  beaufort as wasm_to_beaufort,
+  from_beaufort as wasm_from_beaufort,
 } from "./wasm.js";
 
 await init(source);
@@ -55,10 +57,19 @@ export function toAtbash(text: string): string {
 export function fromAtbash(text: string): string {
   return wasm_from_atbash(text);
 }
-export function toAutokey(a: number, b: number, text: string): string {
-  return wasm_to_autokey(a, b, text);
+
+export function toAutokey(key: string, text: string): string {
+  return wasm_to_autokey(key, text);
 }
 
-export function fromAutokey(a: number, b: number, text: string): string {
-  return wasm_from_autokey(a, b, text);
+export function fromAutokey(key: string, text: string): string {
+  return wasm_from_autokey(key, text);
+}
+
+export function toBeaufort(key: string, text: string): string {
+  return wasm_to_beaufort(key, text);
+}
+
+export function fromBeaufort(key: string, text: string): string {
+  return wasm_from_beaufort(key, text);
 }
