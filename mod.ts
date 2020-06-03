@@ -113,10 +113,12 @@ export function fromCaesar(key: string, text: string): string {
 }
 
 export function toColumnarTransposition(key: string, text: string): string {
+  if (!abides("columnartransposition", key)) throw "Invalid key";
   return wasm_to_columnartransposition(key, text);
 }
 
 export function fromColumnarTransposition(key: string, text: string): string {
+  if (!abides("columnartransposition", key)) throw "Invalid key";
   return wasm_from_columnartransposition(key, text);
 }
 
@@ -127,6 +129,7 @@ export function toFourSquare(
   pad: string,
   text: string,
 ): string {
+  if (!abides("foursquare", [key1, key2, alphabet, pad])) throw "Invalid key";
   return wasm_to_foursquare(key1, key2, alphabet, pad, text);
 }
 
@@ -137,6 +140,7 @@ export function fromFourSquare(
   pad: string,
   text: string,
 ): string {
+  if (!abides("foursquare", [key1, key2, alphabet, pad])) throw "Invalid key";
   return wasm_from_foursquare(key1, key2, alphabet, pad, text);
 }
 
