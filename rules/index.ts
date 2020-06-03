@@ -6,6 +6,25 @@ function isAlphabetical(str: string): string | null | undefined {
   return str.split("").find((x) => !ALPHABETS.includes(x));
 }
 
+function hasSameCharacters(x: string, y: string) {
+  let occurance: { [key: string]: number } = {};
+  let xArr = x.split("");
+  let yArr = y.split("");
+  let sameChars: boolean = false;
+  for (const el in yArr) {
+    occurance[xArr[el]] = 1;
+  }
+  for (const el in xArr) {
+    for (const k in occurance) {
+      if (!occurance[xArr[el]]) {
+        sameChars = true;
+        break;
+      }
+    }
+  }
+  return sameChars;
+}
+
 function hasRepeatedCharacters(str: string) {
   let letters: string[] = str.split("");
   let occurance: { [key: string]: number } = {};
@@ -48,12 +67,29 @@ function Rules(fn: string, toCheck: any) {
     case "columnartransposition":
       // TODO: valid ascii check
       return true;
+    case "foursquare":
+      if (
+        toCheck[0].length == 25 && toCheck[1].length == 25 &&
+        toCheck[1].length == 25
+      ) {
+        // TODO: alphabet should be a valid ascii
+        return (
+          !hasRepeatedCharacters(toCheck[0]) &&
+          !hasRepeatedCharacters(toCheck[1]) &&
+          !hasRepeatedCharacters(toCheck[2]) &&
+          !hasSameCharacters(toCheck[1], toCheck[0]) &&
+          !hasSameCharacters(toCheck[2], toCheck[0]) &&
+          !hasSameCharacters(toCheck[3], toCheck[0])
+        );
+      }
+      return false;
     default:
       throw "Function not found";
       break;
   }
 }
 
-console.log(Rules("affine", [1, 1, 10]));
+// FourSquare example:
+// console.log(Rules("foursquare", ["ABCDEFGHIJKLMNOPQRSTUVWXY", "ABCDEFGHIJKLMNOPQRSTUVWXY", "ABCDEFGHIJKLMNOPQRSTUVWXY", "ABCDEF"]));
 
 export default Rules;
