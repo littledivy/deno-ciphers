@@ -47,19 +47,22 @@ export function fromVigenere(key: string, text: string): string {
 }
 
 export function toADFGVX(key: string, keyword: string, text: string): string {
-  if (!abides("vigenere", key)) throw "Invalid key";
+  if (!abides("adfgvx", [key])) throw "Invalid key";
   return wasm_to_adfgvx(key, keyword, text);
 }
 
 export function fromADFGVX(key: string, keyword: string, text: string): string {
+  if (!abides("adfgvx", [key])) throw "Invalid key";
   return wasm_from_adfgvx(key, keyword, text);
 }
 
 export function toADFGX(key: string, keyword: string, text: string): string {
+  if (!abides("adfgx", [key])) throw "Invalid key";
   return wasm_to_adfgx(key, keyword, text);
 }
 
 export function fromADFGX(key: string, keyword: string, text: string): string {
+  if (!abides("adfgx", [key])) throw "Invalid key";
   return wasm_from_adfgx(key, keyword, text);
 }
 
