@@ -55,7 +55,7 @@ fromVigenere("key", "CXPSRE"); // "string"
   * `b` should be in the range [1, 25].
   * `a` should not be relatively prime to 26.
 
-* __Atbase__
+* __Atbash__
   * no rules
 
 * __AutoKey__
