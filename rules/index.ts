@@ -65,7 +65,8 @@ function Rules(fn: string, toCheck: any) {
       return isAlphabetical(toCheck);
       break;
     case "adfgvx":
-      if (toCheck.length < 36) return !hasRepeatedCharacters(toCheck);
+      // TODO: ascii check for toCheck[1]
+      if (toCheck[0].length < 36) return !hasRepeatedCharacters(toCheck[0]);
       return false;
       break;
     case "adfgx":

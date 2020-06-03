@@ -32,17 +32,22 @@ import init, {
   from_substitution as wasm_from_substitution,
 } from "./wasm.js";
 
+import abides from "./rules/index.ts";
+
 await init(source);
 
 export function toVigenere(key: string, text: string): string {
+  if (!abides("vigenere", key)) throw "Invalid key";
   return wasm_to_vigenere(key, text);
 }
 
 export function fromVigenere(key: string, text: string): string {
+  if (!abides("vigenere", key)) throw "Invalid key";
   return wasm_from_vigenere(key, text);
 }
 
 export function toADFGVX(key: string, keyword: string, text: string): string {
+  if (!abides("vigenere", key)) throw "Invalid key";
   return wasm_to_adfgvx(key, keyword, text);
 }
 
