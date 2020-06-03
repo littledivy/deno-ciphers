@@ -59,4 +59,4 @@ Pull request, issues and feedback are very welcome. Code style is formatted with
 
 ### Licence
 
-Copyright 2020, Denosaurs. All rights reserved. MIT license.
+Copyright 2020, Divy Srivastava. All rights reserved. MIT license.
