@@ -1,6 +1,6 @@
 scripts:
   bench:
-    cmd: deno run --unstable -A benchmarks/index.ts
+    cmd: deno run -A benchmarks/index.ts
     env:
       DEV: true
       DEBUG: true
@@ -10,4 +10,4 @@ scripts:
       DEV: true
       DEBUG: true
   fmt: deno fmt && cargo fmt
-  build: cargo build
+  build: deno run -A scripts/build.ts
