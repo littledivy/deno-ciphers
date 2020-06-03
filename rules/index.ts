@@ -44,6 +44,21 @@ function inRange(start: number, end: number, key: number) {
   return key <= end && key >= start;
 }
 
+// Example: FourSquare
+/**
+console.log(
+  Rules(
+    "foursquare",
+    [
+      "ABCDEFGHIJKLMNOPQRSTUVWXY",
+      "ABCDEFGHIJKLMNOPQRSTUVWXY",
+      "ABCDEFGHIJKLMNOPQRSTUVWXY",
+      "ABCDEF",
+    ],
+  ),
+);
+**/
+
 function Rules(fn: string, toCheck: any) {
   switch (fn.toLowerCase()) {
     case "vigenere":
@@ -119,8 +134,5 @@ function Rules(fn: string, toCheck: any) {
       break;
   }
 }
-
-// FourSquare example:
-// console.log(Rules("foursquare", ["ABCDEFGHIJKLMNOPQRSTUVWXY", "ABCDEFGHIJKLMNOPQRSTUVWXY", "ABCDEFGHIJKLMNOPQRSTUVWXY", "ABCDEF"]));
 
 export default Rules;
