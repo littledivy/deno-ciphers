@@ -87,7 +87,7 @@ fromVigenere("key", "CXPSRE"); // "string"
   * key should be a valid ascii.
   * key should not contain repeated characters.
   * chars should be a valid ascii.
-  * key should not contain repeated characters.
+  * chars should not contain repeated characters.
   * length of chars should be equal to `sqrt(key.length())`, and key should be of length `chars.length()^2`.
 
 * __Porta__

@@ -90,7 +90,15 @@ function Rules(fn: string, toCheck: any) {
       return (
         toCheck[0].length == 25 &&
         !hasRepeatedCharacters(toCheck[0]) &&
-        hasSameCharacters(toCheck[3], toCheck[0])
+        hasSameCharacters(toCheck[1], toCheck[0])
+      );
+      break;
+    case "polybiusqaure":
+      return (
+        toCheck[0].length == 25 &&
+        !hasRepeatedCharacters(toCheck[0]) &&
+        !hasRepeatedCharacters(toCheck[1]) &&
+        toCheck[1].length == Math.sqrt(toCheck[0].length)
       );
       break;
     default:
