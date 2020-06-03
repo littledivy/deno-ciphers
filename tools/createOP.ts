@@ -18,4 +18,4 @@ export default function createOP(fn: string) {
   `;
 }
 
-createOP(Deno.args[0]);
+console.log(createOP(Deno.args[0]));
