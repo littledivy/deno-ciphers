@@ -20,6 +20,12 @@ import init, {
   from_columnartransposition as wasm_from_columnartransposition,
   foursquare as wasm_to_foursquare,
   from_foursquare as wasm_from_foursquare,
+  polybiussquare as wasm_to_polybiussquare,
+  from_polybiussquare as wasm_from_polybiussquare,
+  porta as wasm_to_porta,
+from_porta as wasm_from_porta,
+
+
 } from "./wasm.js";
 
 await init(source);
@@ -114,4 +120,28 @@ export function fromFourSquare(
   text: string,
 ): string {
   return wasm_from_foursquare(key1, key2, alphabet, pad, text);
+}
+
+export function toPolybiusSquare(
+  key: string,
+  chars: string,
+  text: string,
+): string {
+  return wasm_to_polybiussquare(key, chars, text);
+}
+
+export function fromPolybiusSquare(
+  key: string,
+  chars: string,
+  text: string,
+): string {
+  return wasm_from_polybiussquare(key, chars, text);
+}
+
+export function toPorta(key: string, text: string): string {
+  return wasm_to_porta(key, text);
+}
+
+export function fromPorta(key: string, text: string): string {
+  return wasm_from_porta(key, text);
 }

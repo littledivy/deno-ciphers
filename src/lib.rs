@@ -166,7 +166,7 @@ pub fn from_foursquare(key1: &str, key2: &str, alphabet: &str, pad: char, text: 
 }
 
 #[wasm_bindgen]
-pub fn polybiussquare(key: String, chars: char, text: String) -> String {
+pub fn polybiussquare(key: String, chars: &str, text: String) -> String {
     let ciph = PolybiusSquare::new(&key, chars);
     // encipher
     let ctext = ciph.encipher(&text).unwrap();
@@ -174,9 +174,25 @@ pub fn polybiussquare(key: String, chars: char, text: String) -> String {
 }
 
 #[wasm_bindgen]
-pub fn from_polybiussquare(key: String, chars: char, text: String) -> String {
-    let ciph = PolybiusSquare::new(&key, char);
+pub fn from_polybiussquare(key: String, chars: &str, text: String) -> String {
+    let ciph = PolybiusSquare::new(&key, chars);
     // decipher
     let ptext = ciph.decipher(&text).unwrap();
     ptext
 }
+
+#[wasm_bindgen]
+pub fn porta(key: String, text: String) -> String {
+      let ciph = Porta::new(&key);
+      // encipher
+      let ctext = ciph.encipher(&text).unwrap();
+      ctext
+  }
+
+  #[wasm_bindgen]
+  pub fn from_porta(key: String, text: String) -> String {
+      let ciph = Porta::new(&key);
+      // decipher
+      let ptext = ciph.decipher(&text).unwrap();
+      ptext
+  }
