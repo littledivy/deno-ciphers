@@ -1,6 +1,6 @@
 # deno-cihpers
 
-Encihper and Decipher implementation for Deno.
+Encipher and Decipher implementation for Deno.
 
 ## Implementations
 
