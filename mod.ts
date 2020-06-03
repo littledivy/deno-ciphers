@@ -24,4 +24,4 @@ export function fromADFGVX(key: string, keyword: string,  text: string): string 
   return wasm_from_adfgvx(key, keyword, text);
 }
 
-toVigenere("myke", "a");
+console.log(toVigenere("key", "string"))

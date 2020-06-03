@@ -2,12 +2,18 @@
 
 Encihper and Decipher implementation for Deno.
 
+## Implementations
+
+- [x] Vigenere
+- [x] ADFGVX
+
 ## Example
 
 ```typescript
 import { toVigenere, fromVigenere } from 'mod.ts';
-toVigenere("my_key", "string_to_cipher");
-fromVigenere("my_key", "")
+
+toVigenere("key", "string"); // "CXPSRE"
+fromVigenere("key", "CXPSRE"); // "string"
 ```
 
 ## Building from source
