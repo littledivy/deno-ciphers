@@ -14,10 +14,10 @@ Encipher and Decipher implementation for Deno.
 - [x] Caesar
 - [x] ColumnarTransposition
 - [x] FourSquare
-- [ ] PlayFair
-- [ ] PolybiusSqaure
-- [ ] Porta
-- [ ] RailFence
+- [x] PlayFair
+- [x] PolybiusSqaure
+- [x] Porta
+- [x] RailFence
 - [ ] RunningKey
 - [ ] Substitution
 
