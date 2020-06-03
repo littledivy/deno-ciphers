@@ -116,3 +116,19 @@ pub fn from_beaufort(key: String, text: String) -> String {
     let ptext = ciph.decipher(&text).unwrap();
     ptext
 }
+
+#[wasm_bindgen]
+pub fn caesar(key: u8, text: String) -> String {
+    let ciph = Caesar::new(key);
+    // encipher
+    let ctext = ciph.encipher(&text).unwrap();
+    ctext
+}
+
+#[wasm_bindgen]
+pub fn from_caesar(key: u8, text: String) -> String {
+    let ciph = Caesar::new(key);
+    // decipher
+    let ptext = ciph.decipher(&text).unwrap();
+    ptext
+}

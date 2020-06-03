@@ -14,6 +14,8 @@ import init, {
   from_autokey as wasm_from_autokey,
   beaufort as wasm_to_beaufort,
   from_beaufort as wasm_from_beaufort,
+  caesar as wasm_to_caesar,
+  from_caesar as wasm_from_caesar,
 } from "./wasm.js";
 
 await init(source);
@@ -72,4 +74,12 @@ export function toBeaufort(key: string, text: string): string {
 
 export function fromBeaufort(key: string, text: string): string {
   return wasm_from_beaufort(key, text);
+}
+
+export function toCaesar(key: string, text: string): string {
+  return wasm_to_caesar(new TextEncoder().encode(key), text);
+}
+
+export function fromCaesar(key: string, text: string): string {
+  return wasm_from_caesar(new TextEncoder().encode(key), text);
 }

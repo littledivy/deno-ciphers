@@ -11,7 +11,7 @@ Encihper and Decipher implementation for Deno.
 - [x] Atbash
 - [x] Autokey
 - [x] Beaufort
-- [ ] Caesar
+- [x] Caesar
 - [ ] ColumnarTransposition
 - [ ] FourSquare
 - [ ] PlayFair
