@@ -11,3 +11,5 @@ scripts:
       DEBUG: true
   fmt: deno fmt && cargo fmt
   build: deno run -A scripts/build.ts
+  op: deno run -A tools/createOP.ts
+  op-import: deno run -A tools/createImportScript.ts
