@@ -18,7 +18,7 @@ Encipher and Decipher implementation for Deno.
 - [x] PolybiusSqaure
 - [x] Porta
 - [x] RailFence
-- [ ] RunningKey
+- [x] RunningKey
 - [ ] Substitution
 
 ## Example
