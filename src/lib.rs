@@ -164,3 +164,19 @@ pub fn from_foursquare(key1: &str, key2: &str, alphabet: &str, pad: char, text: 
     let ptext = ciph.decipher(&text).unwrap();
     ptext
 }
+
+#[wasm_bindgen]
+pub fn polybiussquare(key: String, chars: char, text: String) -> String {
+    let ciph = PolybiusSquare::new(&key, chars);
+    // encipher
+    let ctext = ciph.encipher(&text).unwrap();
+    ctext
+}
+
+#[wasm_bindgen]
+pub fn from_polybiussquare(key: String, chars: char, text: String) -> String {
+    let ciph = PolybiusSquare::new(&key, char);
+    // decipher
+    let ptext = ciph.decipher(&text).unwrap();
+    ptext
+}
