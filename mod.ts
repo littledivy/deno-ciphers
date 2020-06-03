@@ -149,6 +149,7 @@ export function toPolybiusSquare(
   chars: string,
   text: string,
 ): string {
+  if (!abides("polybiusqaure", [key, chars])) throw "Invalid key";
   return wasm_to_polybiussquare(key, chars, text);
 }
 
@@ -157,37 +158,46 @@ export function fromPolybiusSquare(
   chars: string,
   text: string,
 ): string {
+  if (!abides("polybiusqaure", [key, chars])) throw "Invalid key";
   return wasm_from_polybiussquare(key, chars, text);
 }
 
 export function toPorta(key: string, text: string): string {
+  if (!abides("porta", key)) throw "Invalid key";
   return wasm_to_porta(key, text);
 }
 
 export function fromPorta(key: string, text: string): string {
+  if (!abides("porta", key)) throw "Invalid key";
   return wasm_from_porta(key, text);
 }
 
 export function toRailFence(key: number, text: string): string {
+  if (!abides("railfence", key)) throw "Invalid key";
   return wasm_to_railfence(key, text);
 }
 
 export function fromRailFence(key: string, text: string): string {
+  if (!abides("railfence", key)) throw "Invalid key";
   return wasm_from_railfence(new TextEncoder().encode(key), text);
 }
 
 export function toRunningKey(key: string, text: string): string {
+  if (!abides("runningkey", key)) throw "Invalid key";
   return wasm_to_runningkey(key, text);
 }
 
 export function fromRunningKey(key: string, text: string): string {
+  if (!abides("runningkey", key)) throw "Invalid key";
   return wasm_from_runningkey(key, text);
 }
 
 export function toSubstitution(key: string, text: string): string {
+  if (!abides("substitution", key)) throw "Invalid key";
   return wasm_to_substitution(key, text);
 }
 
 export function fromSubstitution(key: string, text: string): string {
+  if (!abides("substitution", key)) throw "Invalid key";
   return wasm_from_substitution(key, text);
 }
