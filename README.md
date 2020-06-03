@@ -6,6 +6,20 @@ Encihper and Decipher implementation for Deno.
 
 - [x] Vigenere
 - [x] ADFGVX
+- [ ] ADFGV
+- [ ] Affine
+- [ ] Atbash
+- [ ] Autokey
+- [ ] Beaufort
+- [ ] Caesar
+- [ ] ColumnarTransposition
+- [ ] FourSquare
+- [ ] PlayFair
+- [ ] PolybiusSqaure
+- [ ] Porta
+- [ ] RailFence
+- [ ] RunningKey
+- [ ] Substitution
 
 ## Example
 
