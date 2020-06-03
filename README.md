@@ -30,6 +30,54 @@ toVigenere("key", "string"); // "CXPSRE"
 fromVigenere("key", "CXPSRE"); // "string"
 ```
 
+## Rules
+
+* __Vigenere__
+  * key should be alphabetic.
+
+* __ADFGVX__
+  * key < 36 in length.
+  * key should not contain repeated chars.
+  * key and keyword should be a valid ascii.
+
+* __ADFGX__
+  * key < 25 in length.
+  * key should not contain repeated chars.
+  * key and keyword should be a valid ascii.
+
+* __Affine__
+  * `a` should be in the range [1, 25].
+  * `b` should be in the range [1, 25].
+  * `a` should not be relatively prime to 26.
+
+* __Atbase__
+  * no rules
+
+* __AutoKey__
+  * key should be alphabetic.
+
+* __Beaufort__
+  * key should be alphabetic.
+
+* __Caesar__
+  * no rules
+
+* __ColumnarTransposition__
+  * key should be a valid ascii.
+
+* __FourSquare__
+  * alphabet, key1, key2 should be 25 chars in length.
+  * alphabet should be a valid ascii.
+  * alphabet, key1, key2 should not contain repeated chars.
+  * All of the chars in key1 and key2 should be in alphabet.
+  * pad should be contained in alphabet.
+
+* __Playfair__
+  * key should 25 chars in length.
+  * key should be a valid ascii.
+  * key should not contain repeated characters.
+  * pad should not be contained within key.
+
 ## Building from source
 
 ### Prerequisites
