@@ -28,6 +28,8 @@ import init, {
   from_railfence as wasm_from_railfence,
   runningkey as wasm_to_runningkey,
   from_runningkey as wasm_from_runningkey,
+  substitution as wasm_to_substitution,
+  from_substitution as wasm_from_substitution,
 } from "./wasm.js";
 
 await init(source);
@@ -162,4 +164,12 @@ export function toRunningKey(key: string, text: string): string {
 
 export function fromRunningKey(key: string, text: string): string {
   return wasm_from_runningkey(key, text);
+}
+
+export function toSubstitution(key: string, text: string): string {
+  return wasm_to_substitution(key, text);
+}
+
+export function fromSubstitution(key: string, text: string): string {
+  return wasm_from_substitution(key, text);
 }

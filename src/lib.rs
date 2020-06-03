@@ -228,3 +228,19 @@ pub fn from_runningkey(key: String, text: String) -> String {
     let ptext = ciph.decipher(&text).unwrap();
     ptext
 }
+
+#[wasm_bindgen]
+pub fn substitution(key: String, text: String) -> String {
+    let ciph = Substitution::new(&key);
+    // encipher
+    let ctext = ciph.encipher(&text).unwrap();
+    ctext
+}
+
+#[wasm_bindgen]
+pub fn from_substitution(key: String, text: String) -> String {
+    let ciph = Substitution::new(&key);
+    // decipher
+    let ptext = ciph.decipher(&text).unwrap();
+    ptext
+}
