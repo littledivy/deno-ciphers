@@ -39,6 +39,15 @@ function Rules(fn: string, toCheck: any) {
       return false;
     case "affine":
       return inRange(1, 25, toCheck[0]) && inRange(1, 25, toCheck[1]);
+    case "autokey":
+      return isAlphabetical(toCheck);
+      break;
+    case "beaufort":
+      return isAlphabetical(toCheck);
+      break;
+    case "columnartransposition":
+      // TODO: valid ascii check
+      return true;
     default:
       throw "Function not found";
       break;
