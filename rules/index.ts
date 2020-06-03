@@ -104,6 +104,8 @@ function Rules(fn: string, toCheck: any) {
     case "porta":
       return isAlphabetical(toCheck);
       break;
+    case "railfence":
+      return !(toCheck <= 0);
     default:
       throw "Function not found";
       break;
