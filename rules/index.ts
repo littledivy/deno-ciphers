@@ -21,21 +21,30 @@ function hasRepeatedCharacters(str: string) {
   return repeated;
 }
 
-function Rules(fn: string, toCheck: string) {
+function inRange(start: number, end: number, key: number) {
+  return key <= end && key >= start;
+}
+
+function Rules(fn: string, toCheck: any) {
   switch (fn.toLowerCase()) {
     case "vigenere":
       return isAlphabetical(toCheck);
       break;
     case "adfgvx":
       if (toCheck.length < 36) return !hasRepeatedCharacters(toCheck);
-      return true;
+      return false;
       break;
+    case "adfgx":
+      if (toCheck.length < 25) return !hasRepeatedCharacters(toCheck);
+      return false;
+    case "affine":
+      return inRange(1, 25, toCheck[0]) && inRange(1, 25, toCheck[1]);
     default:
       throw "Function not found";
       break;
   }
 }
 
-console.log(Rules("adfgvx", "1aasdkj"));
+console.log(Rules("affine", [1, 1, 10]));
 
 export default Rules;
