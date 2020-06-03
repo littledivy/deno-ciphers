@@ -1,5 +1,10 @@
 # deno-ciphers
 
+[![stars](https://img.shields.io/github/stars/divy-work/deno-ciphers)](https://github.com/divy-work/deno-ciphers/stargazers)
+[![issues](https://img.shields.io/github/issues/divy-work/deno-ciphers)](https://github.com/divy-work/deno-ciphers/issues)
+![deno version](https://img.shields.io/badge/deno-1.0.3-success)
+[![vr scripts](https://badges.velociraptor.run/flat.svg)](https://velociraptor.run)
+
 Encipher and Decipher implementation for Deno.
 
 ## Implementations
