@@ -1,4 +1,4 @@
-# deno-cihpers
+# deno-ciphers
 
 Encipher and Decipher implementation for Deno.
 
