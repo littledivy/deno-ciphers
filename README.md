@@ -1,9 +1,8 @@
-# wasabi
+# deno-cihpers
 
-This is a template repository for deno modules that want to use wasm. To use it simply click the
-["Use this template"](https://github.com/denosaurs/wasabi/generate) button to generate a new repo
-with all the stuff you need to get started writing rust and running it using wasm in deno.
+Cihper implementation for Deno.
 
+### Building from source
 ## Prerequisites
 
 - [deno](https://deno.land/)
