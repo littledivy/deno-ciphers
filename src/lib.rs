@@ -10,6 +10,13 @@ pub fn vigenere(key: String, text: String) -> String {
     let vigenere = Vigenere::new(&key);
     // encipher
     let ctext = vigenere.encipher(&text).unwrap();
-    println!("ciphertext: {}", ctext);
     ctext
+}
+
+#[wasm_bindgen]
+pub fn from_vigenere(key: String, text: String) -> String {
+    let vigenere = Vigenere::new(&key);
+    // decipher
+    let ptext = vigenere.decipher(&text).unwrap();
+    ptext
 }
