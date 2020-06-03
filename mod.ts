@@ -10,6 +10,8 @@ import init, {
   from_affine as wasm_from_affine,
   atbash as wasm_to_atbash,
   from_atbash as wasm_from_atbash,
+  autokey as wasm_to_autokey,
+  from_autokey as wasm_from_autokey,
 } from "./wasm.js";
 
 await init(source);
@@ -52,4 +54,11 @@ export function toAtbash(text: string): string {
 
 export function fromAtbash(text: string): string {
   return wasm_from_atbash(text);
+}
+export function toAutokey(a: number, b: number, text: string): string {
+  return wasm_to_autokey(a, b, text);
+}
+
+export function fromAutokey(a: number, b: number, text: string): string {
+  return wasm_from_autokey(a, b, text);
 }

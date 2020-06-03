@@ -9,7 +9,7 @@ Encihper and Decipher implementation for Deno.
 - [x] ADFGX
 - [x] Affine
 - [x] Atbash
-- [ ] Autokey
+- [x] Autokey
 - [ ] Beaufort
 - [ ] Caesar
 - [ ] ColumnarTransposition

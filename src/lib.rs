@@ -84,3 +84,19 @@ pub fn from_atbash(text: String) -> String {
     let ptext = ciph.decipher(&text).unwrap();
     ptext
 }
+
+#[wasm_bindgen]
+pub fn autokey(key: String, text: String) -> String {
+    let ciph = Autokey::new(&key);
+    // encipher
+    let ctext = ciph.encipher(&text).unwrap();
+    ctext
+}
+
+#[wasm_bindgen]
+pub fn from_autokey(key: String, text: String) -> String {
+    let ciph = Autokey::new(&key);
+    // decipher
+    let ptext = ciph.decipher(&text).unwrap();
+    ptext
+}
