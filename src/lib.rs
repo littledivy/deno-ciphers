@@ -1,4 +1,4 @@
-use ciphers::{Cipher, Vigenere, ADFGVX, ADFGX, Affine};
+use ciphers::*;
 use wasm_bindgen::prelude::wasm_bindgen;
 
 #[cfg(feature = "wee_alloc")]
@@ -64,6 +64,22 @@ pub fn affine(a: i32, b: i32, text: String) -> String {
 #[wasm_bindgen]
 pub fn from_affine(a: i32, b: i32, text: String) -> String {
     let ciph = Affine::new(a, b);
+    // decipher
+    let ptext = ciph.decipher(&text).unwrap();
+    ptext
+}
+
+#[wasm_bindgen]
+pub fn atbash(text: String) -> String {
+    let ciph = Atbash::new();
+    // encipher
+    let ctext = ciph.encipher(&text).unwrap();
+    ctext
+}
+
+#[wasm_bindgen]
+pub fn from_atbash(text: String) -> String {
+    let ciph = Atbash::new();
     // decipher
     let ptext = ciph.decipher(&text).unwrap();
     ptext

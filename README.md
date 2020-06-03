@@ -8,7 +8,7 @@ Encihper and Decipher implementation for Deno.
 - [x] ADFGVX
 - [x] ADFGX
 - [x] Affine
-- [ ] Atbash
+- [x] Atbash
 - [ ] Autokey
 - [ ] Beaufort
 - [ ] Caesar

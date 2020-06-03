@@ -8,6 +8,8 @@ import init, {
   from_adfgx as wasm_from_adfgx,
   affine as wasm_to_affine,
   from_affine as wasm_from_affine,
+  atbash as wasm_to_atbash,
+  from_atbash as wasm_from_atbash,
 } from "./wasm.js";
 
 await init(source);
@@ -42,4 +44,12 @@ export function toAffine(a: number, b: number, text: string): string {
 
 export function fromAffine(a: number, b: number, text: string): string {
   return wasm_from_affine(a, b, text);
+}
+
+export function toAtbash(text: string): string {
+  return wasm_to_atbash(text);
+}
+
+export function fromAtbash(text: string): string {
+  return wasm_from_atbash(text);
 }
