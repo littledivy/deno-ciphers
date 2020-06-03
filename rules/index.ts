@@ -67,6 +67,7 @@ function Rules(fn: string, toCheck: any) {
     case "columnartransposition":
       // TODO: valid ascii check
       return true;
+      break;
     case "foursquare":
       if (
         toCheck[0].length == 25 && toCheck[1].length == 25 &&
@@ -83,6 +84,15 @@ function Rules(fn: string, toCheck: any) {
         );
       }
       return false;
+      break;
+    case "playfair":
+      // TODO: alphabet should be a valid ascii
+      return (
+        toCheck[0].length == 25 &&
+        !hasRepeatedCharacters(toCheck[0]) &&
+        hasSameCharacters(toCheck[3], toCheck[0])
+      );
+      break;
     default:
       throw "Function not found";
       break;
