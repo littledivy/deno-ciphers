@@ -78,6 +78,13 @@ fromVigenere("key", "CXPSRE"); // "string"
   * key should not contain repeated characters.
   * pad should not be contained within key.
 
+* __PolybiusSqaure__
+  * key should be a valid ascii.
+  * key should not contain repeated characters.
+  * chars should be a valid ascii.
+  * key should not contain repeated characters.
+  * length of chars should be equal to `sqrt(key.length())`, and key should be of length `chars.length()^2`.
+
 ## Building from source
 
 ### Prerequisites
