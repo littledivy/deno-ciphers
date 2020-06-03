@@ -101,6 +101,9 @@ function Rules(fn: string, toCheck: any) {
         toCheck[1].length == Math.sqrt(toCheck[0].length)
       );
       break;
+    case "porta":
+      return isAlphabetical(toCheck);
+      break;
     default:
       throw "Function not found";
       break;
