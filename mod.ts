@@ -25,7 +25,9 @@ import init, {
   porta as wasm_to_porta,
   from_porta as wasm_from_porta,
   railfence as wasm_to_railfence,
- from_railfence as wasm_from_railfence,
+  from_railfence as wasm_from_railfence,
+  runningkey as wasm_to_runningkey,
+  from_runningkey as wasm_from_runningkey,
 } from "./wasm.js";
 
 await init(source);
@@ -152,4 +154,12 @@ export function toRailFence(key: number, text: string): string {
 
 export function fromRailFence(key: string, text: string): string {
   return wasm_from_railfence(new TextEncoder().encode(key), text);
+}
+
+export function toRunningKey(key: string, text: string): string {
+  return wasm_to_runningkey(key, text);
+}
+
+export function fromRunningKey(key: string, text: string): string {
+  return wasm_from_runningkey(key, text);
 }

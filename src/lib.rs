@@ -212,3 +212,19 @@ pub fn from_railfence(key: usize, text: String) -> String {
     let ptext = ciph.decipher(&text).unwrap();
     ptext
 }
+
+#[wasm_bindgen]
+pub fn runningkey(key: String, text: String) -> String {
+    let ciph = RunningKey::new(&key);
+    // encipher
+    let ctext = ciph.encipher(&text).unwrap();
+    ctext
+}
+
+#[wasm_bindgen]
+pub fn from_runningkey(key: String, text: String) -> String {
+    let ciph = RunningKey::new(&key);
+    // decipher
+    let ptext = ciph.decipher(&text).unwrap();
+    ptext
+}
