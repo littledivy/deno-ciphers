@@ -1,4 +1,4 @@
-export default createOP(fn: string) {
+export default function createOP(fn: string) {
   return `
   #[wasm_bindgen]
   pub fn ${fn.toLowerCase()}(key: String, text: String) -> String {
@@ -15,7 +15,7 @@ export default createOP(fn: string) {
       let ptext = ciph.decipher(&text).unwrap();
       ptext
   }
-  `
+  `;
 }
 
 createOP(Deno.args[0]);

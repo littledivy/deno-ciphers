@@ -3,7 +3,7 @@ import init, {
   vigenere as wasm_to_vigenere,
   from_vigenere as wasm_from_vigenere,
   adfgvx as wasm_to_adfgvx,
-  from_adfgvx as wasm_from_adfgvx
+  from_adfgvx as wasm_from_adfgvx,
 } from "./wasm.js";
 
 await init(source);
@@ -16,12 +16,12 @@ export function fromVigenere(key: string, text: string): string {
   return wasm_from_vigenere(key, text);
 }
 
-export function toADFGVX(key: string,  keyword: string, text: string): string {
+export function toADFGVX(key: string, keyword: string, text: string): string {
   return wasm_to_adfgvx(key, keyword, text);
 }
 
-export function fromADFGVX(key: string, keyword: string,  text: string): string {
+export function fromADFGVX(key: string, keyword: string, text: string): string {
   return wasm_from_adfgvx(key, keyword, text);
 }
 
-console.log(toVigenere("key", "string"))
+console.log(toVigenere("key", "string"));
