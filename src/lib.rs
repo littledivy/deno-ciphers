@@ -46,7 +46,7 @@ pub fn adfgx(key: String, keyword: String, text: String) -> String {
 }
 
 #[wasm_bindgen]
-pub fn from_adfgv(key: String, keyword: String, text: String) -> String {
+pub fn from_adfgx(key: String, keyword: String, text: String) -> String {
     let ciph = ADFGX::new(&key, &keyword);
     // decipher
     let ptext = ciph.decipher(&text).unwrap();

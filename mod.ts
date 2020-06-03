@@ -4,6 +4,8 @@ import init, {
   from_vigenere as wasm_from_vigenere,
   adfgvx as wasm_to_adfgvx,
   from_adfgvx as wasm_from_adfgvx,
+  adfgx as wasm_to_adfgx,
+  from_adfgx as wasm_from_adfgx,
 } from "./wasm.js";
 
 await init(source);
@@ -24,4 +26,10 @@ export function fromADFGVX(key: string, keyword: string, text: string): string {
   return wasm_from_adfgvx(key, keyword, text);
 }
 
-console.log(toVigenere("key", "string"));
+export function toADFGX(key: string, keyword: string, text: string): string {
+  return wasm_to_adfgx(key, keyword, text);
+}
+
+export function fromADFGX(key: string, keyword: string, text: string): string {
+  return wasm_from_adfgx(key, keyword, text);
+}
