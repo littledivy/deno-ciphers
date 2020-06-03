@@ -67,10 +67,12 @@ export function fromADFGX(key: string, keyword: string, text: string): string {
 }
 
 export function toAffine(a: number, b: number, text: string): string {
+  if (!abides("affine", [a, b])) throw "Invalid key(s)";
   return wasm_to_affine(a, b, text);
 }
 
 export function fromAffine(a: number, b: number, text: string): string {
+  if (!abides("affine", [a, b])) throw "Invalid key(s)";
   return wasm_from_affine(a, b, text);
 }
 
@@ -83,18 +85,22 @@ export function fromAtbash(text: string): string {
 }
 
 export function toAutokey(key: string, text: string): string {
+  if (!abides("autokey", key)) throw "Invalid key";
   return wasm_to_autokey(key, text);
 }
 
 export function fromAutokey(key: string, text: string): string {
+  if (!abides("autokey", key)) throw "Invalid key";
   return wasm_from_autokey(key, text);
 }
 
 export function toBeaufort(key: string, text: string): string {
+  if (!abides("beaufort", key)) throw "Invalid key";
   return wasm_to_beaufort(key, text);
 }
 
 export function fromBeaufort(key: string, text: string): string {
+  if (!abides("beaufort", key)) throw "Invalid key";
   return wasm_from_beaufort(key, text);
 }
 
