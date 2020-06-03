@@ -13,7 +13,7 @@ Encihper and Decipher implementation for Deno.
 - [x] Beaufort
 - [x] Caesar
 - [x] ColumnarTransposition
-- [ ] FourSquare
+- [x] FourSquare
 - [ ] PlayFair
 - [ ] PolybiusSqaure
 - [ ] Porta

@@ -148,3 +148,19 @@ pub fn from_columnartransposition(key: String, text: String) -> String {
     let ptext = ciph.decipher(&text).unwrap();
     ptext
 }
+
+#[wasm_bindgen]
+pub fn foursquare(key1: &str, key2: &str, alphabet: &str, pad: char, text: String) -> String {
+    let ciph = FourSquare::new(key1, key2, alphabet, pad);
+    // encipher
+    let ctext = ciph.encipher(&text).unwrap();
+    ctext
+}
+
+#[wasm_bindgen]
+pub fn from_foursquare(key1: &str, key2: &str, alphabet: &str, pad: char, text: String) -> String {
+    let ciph = FourSquare::new(key1, key2, alphabet, pad);
+    // decipher
+    let ptext = ciph.decipher(&text).unwrap();
+    ptext
+}

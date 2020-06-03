@@ -18,6 +18,8 @@ import init, {
   from_caesar as wasm_from_caesar,
   columnartransposition as wasm_to_columnartransposition,
   from_columnartransposition as wasm_from_columnartransposition,
+  foursquare as wasm_to_foursquare,
+  from_foursquare as wasm_from_foursquare,
 } from "./wasm.js";
 
 await init(source);
@@ -92,4 +94,24 @@ export function toColumnarTransposition(key: string, text: string): string {
 
 export function fromColumnarTransposition(key: string, text: string): string {
   return wasm_from_columnartransposition(key, text);
+}
+
+export function toFourSquare(
+  key1: string,
+  key2: string,
+  alphabet: string,
+  pad: string,
+  text: string,
+): string {
+  return wasm_to_foursquare(key1, key2, alphabet, pad, text);
+}
+
+export function fromFourSquare(
+  key1: string,
+  key2: string,
+  alphabet: string,
+  pad: string,
+  text: string,
+): string {
+  return wasm_from_foursquare(key1, key2, alphabet, pad, text);
 }
