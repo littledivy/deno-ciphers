@@ -70,7 +70,7 @@ function Rules(fn: string, toCheck: any) {
       return false;
       break;
     case "adfgx":
-      if (toCheck.length < 25) return !hasRepeatedCharacters(toCheck);
+      if (toCheck[0].length < 25) return !hasRepeatedCharacters(toCheck[0]);
       return false;
     case "affine":
       return inRange(1, 25, toCheck[0]) && inRange(1, 25, toCheck[1]);
