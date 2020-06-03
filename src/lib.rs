@@ -22,16 +22,16 @@ pub fn from_vigenere(key: String, text: String) -> String {
 }
 
 #[wasm_bindgen]
-pub fn adfgvx(key: String, text: String) -> String {
-    let ciph = ADFGVX::new(&key);
+pub fn adfgvx(key: String, keyword: String, text: String) -> String {
+    let ciph = ADFGVX::new(&key, &keyword);
     // encipher
     let ctext = ciph.encipher(&text).unwrap();
     ctext
 }
 
 #[wasm_bindgen]
-pub fn from_adfgvx(key: String, text: String) -> String {
-    let ciph = ADFGVX::new(&key);
+pub fn from_adfgvx(key: String, keyword: String, text: String) -> String {
+    let ciph = ADFGVX::new(&key, &keyword);
     // decipher
     let ptext = ciph.decipher(&text).unwrap();
     ptext
