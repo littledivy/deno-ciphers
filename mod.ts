@@ -23,9 +23,7 @@ import init, {
   polybiussquare as wasm_to_polybiussquare,
   from_polybiussquare as wasm_from_polybiussquare,
   porta as wasm_to_porta,
-from_porta as wasm_from_porta,
-
-
+  from_porta as wasm_from_porta,
 } from "./wasm.js";
 
 await init(source);

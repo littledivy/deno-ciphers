@@ -183,16 +183,32 @@ pub fn from_polybiussquare(key: String, chars: &str, text: String) -> String {
 
 #[wasm_bindgen]
 pub fn porta(key: String, text: String) -> String {
-      let ciph = Porta::new(&key);
-      // encipher
-      let ctext = ciph.encipher(&text).unwrap();
-      ctext
-  }
+    let ciph = Porta::new(&key);
+    // encipher
+    let ctext = ciph.encipher(&text).unwrap();
+    ctext
+}
 
-  #[wasm_bindgen]
-  pub fn from_porta(key: String, text: String) -> String {
-      let ciph = Porta::new(&key);
-      // decipher
-      let ptext = ciph.decipher(&text).unwrap();
-      ptext
-  }
+#[wasm_bindgen]
+pub fn from_porta(key: String, text: String) -> String {
+    let ciph = Porta::new(&key);
+    // decipher
+    let ptext = ciph.decipher(&text).unwrap();
+    ptext
+}
+
+#[wasm_bindgen]
+pub fn railfence(key: String, text: String) -> String {
+    let ciph = RailFence::new(&key);
+    // encipher
+    let ctext = ciph.encipher(&text).unwrap();
+    ctext
+}
+
+#[wasm_bindgen]
+pub fn from_railfence(key: String, text: String) -> String {
+    let ciph = RailFence::new(&key);
+    // decipher
+    let ptext = ciph.decipher(&text).unwrap();
+    ptext
+}
