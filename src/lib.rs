@@ -132,3 +132,19 @@ pub fn from_caesar(key: u8, text: String) -> String {
     let ptext = ciph.decipher(&text).unwrap();
     ptext
 }
+
+#[wasm_bindgen]
+pub fn columnartransposition(key: String, text: String) -> String {
+    let ciph = ColumnarTransposition::new(&key);
+    // encipher
+    let ctext = ciph.encipher(&text).unwrap();
+    ctext
+}
+
+#[wasm_bindgen]
+pub fn from_columnartransposition(key: String, text: String) -> String {
+    let ciph = ColumnarTransposition::new(&key);
+    // decipher
+    let ptext = ciph.decipher(&text).unwrap();
+    ptext
+}

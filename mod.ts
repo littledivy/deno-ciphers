@@ -16,6 +16,8 @@ import init, {
   from_beaufort as wasm_from_beaufort,
   caesar as wasm_to_caesar,
   from_caesar as wasm_from_caesar,
+  columnartransposition as wasm_to_columnartransposition,
+  from_columnartransposition as wasm_from_columnartransposition,
 } from "./wasm.js";
 
 await init(source);
@@ -82,4 +84,12 @@ export function toCaesar(key: string, text: string): string {
 
 export function fromCaesar(key: string, text: string): string {
   return wasm_from_caesar(new TextEncoder().encode(key), text);
+}
+
+export function toColumnarTransposition(key: string, text: string): string {
+  return wasm_to_columnartransposition(key, text);
+}
+
+export function fromColumnarTransposition(key: string, text: string): string {
+  return wasm_from_columnartransposition(key, text);
 }
