@@ -1,5 +1,5 @@
 use wasm_bindgen::prelude::wasm_bindgen;
-use ciphers::{Cipher, Vigenere, ADFGVX, ADFGV};
+use ciphers::{Cipher, Vigenere, ADFGVX, ADFGX};
 
 #[cfg(feature = "wee_alloc")]
 #[global_allocator]
@@ -39,8 +39,8 @@ pub fn from_adfgvx(key: String, keyword: String, text: String) -> String {
 
 
 #[wasm_bindgen]
-pub fn adfgv(key: String, keyword: String, text: String) -> String {
-    let ciph = ADFGV::new(&key, &keyword);
+pub fn adfgx(key: String, keyword: String, text: String) -> String {
+    let ciph = ADFGX::new(&key, &keyword);
     // encipher
     let ctext = ciph.encipher(&text).unwrap();
     ctext
@@ -48,7 +48,7 @@ pub fn adfgv(key: String, keyword: String, text: String) -> String {
 
 #[wasm_bindgen]
 pub fn from_adfgv(key: String, keyword: String, text: String) -> String {
-    let ciph = ADFGV::new(&key, &keyword);
+    let ciph = ADFGX::new(&key, &keyword);
     // decipher
     let ptext = ciph.decipher(&text).unwrap();
     ptext
