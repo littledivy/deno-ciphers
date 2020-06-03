@@ -85,6 +85,20 @@ fromVigenere("key", "CXPSRE"); // "string"
   * key should not contain repeated characters.
   * length of chars should be equal to `sqrt(key.length())`, and key should be of length `chars.length()^2`.
 
+* __Porta__
+  * key should be alphabetic.
+
+* __RailFence__
+  * key should not be less than or equal to 0.
+
+* __RunningKey__
+  * key should be alphabetic.
+
+* __Substitution__
+  * key should be 26 characters in length.
+  * key should not contain repeated chars.
+  * key should be alphabetic.
+
 ## Building from source
 
 ### Prerequisites
