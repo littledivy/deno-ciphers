@@ -19,6 +19,7 @@ Encipher and Decipher implementation for Deno.
 - [x] Caesar
 - [x] ColumnarTransposition
 - [x] FourSquare
+- [ ] FractionatedMourse
 - [ ] PlayFair
 - [x] PolybiusSqaure
 - [x] Porta
