@@ -30,6 +30,8 @@ import init, {
   from_runningkey as wasm_from_runningkey,
   substitution as wasm_to_substitution,
   from_substitution as wasm_from_substitution,
+  rot13 as wasm_to_rot13,
+  from_rot13 as wasm_from_rot13,
 } from "./wasm.js";
 
 import abides from "./rules/index.ts";
@@ -200,4 +202,12 @@ export function toSubstitution(key: string, text: string): string {
 export function fromSubstitution(key: string, text: string): string {
   if (!abides("substitution", key)) throw "Invalid key";
   return wasm_from_substitution(key, text);
+}
+
+export function toRot13(text: string): string {
+  return wasm_to_rot13(text);
+}
+
+export function fromRot13(text: string): string {
+  return wasm_from_rot13(text);
 }

@@ -23,7 +23,7 @@ Encipher and Decipher implementation for Deno.
 - [x] PolybiusSqaure
 - [x] Porta
 - [x] RailFence
-- [ ] Rot13
+- [x] Rot13
 - [x] RunningKey
 - [x] Substitution
 
