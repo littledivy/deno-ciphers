@@ -1,10 +1,10 @@
 mod fractionated_morse;
 mod rot13;
 
-use ciphers::*;
-use wasm_bindgen::prelude::wasm_bindgen;
 use crate::cipher::ExtraCipher;
+use ciphers::*;
 use fractionated_morse::FractionatedMorse;
+use wasm_bindgen::prelude::wasm_bindgen;
 
 pub mod alphabet;
 pub mod cipher;

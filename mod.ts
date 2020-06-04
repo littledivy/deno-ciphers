@@ -33,7 +33,7 @@ import init, {
   rot13 as wasm_to_rot13,
   from_rot13 as wasm_from_rot13,
   fractionatedmorse as wasm_to_fractionatedmorse,
- from_fractionatedmorse as wasm_from_fractionatedmorse,
+  from_fractionatedmorse as wasm_from_fractionatedmorse,
 } from "./wasm.js";
 
 import abides from "./rules/index.ts";
