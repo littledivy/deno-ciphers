@@ -75,10 +75,10 @@ function Rules(fn: string, toCheck: any) {
     case "affine":
       return inRange(1, 25, toCheck[0]) && inRange(1, 25, toCheck[1]);
     case "autokey":
-      return isAlphabetical(toCheck);
+      return isAlphabetical(toCheck) ? false : true;
       break;
     case "beaufort":
-      return isAlphabetical(toCheck);
+      return isAlphabetical(toCheck) ? false : true;
       break;
     case "columnartransposition":
       // TODO: valid ascii check
