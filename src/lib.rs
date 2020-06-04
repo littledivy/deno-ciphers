@@ -1,5 +1,13 @@
+mod rot13;
+
 use ciphers::*;
 use wasm_bindgen::prelude::wasm_bindgen;
+
+pub mod alphabet;
+pub mod cipher;
+pub mod keygen;
+pub mod morse;
+pub mod substitute;
 
 #[cfg(feature = "wee_alloc")]
 #[global_allocator]
@@ -19,6 +27,18 @@ pub fn from_vigenere(key: String, text: String) -> String {
     // decipher
     let ptext = vigenere.decipher(&text).unwrap();
     ptext
+}
+
+#[wasm_bindgen]
+pub fn rot13(text: String) -> String {
+    let ctext = rot13::encrypt(&text);
+    ctext
+}
+
+#[wasm_bindgen]
+pub fn from_rot13(text: String) -> String {
+    let ctext = rot13::decrypt(&text);
+    ctext
 }
 
 #[wasm_bindgen]
