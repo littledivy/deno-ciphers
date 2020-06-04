@@ -32,6 +32,8 @@ import init, {
   from_substitution as wasm_from_substitution,
   rot13 as wasm_to_rot13,
   from_rot13 as wasm_from_rot13,
+  fractionatedmorse as wasm_to_fractionatedmorse,
+ from_fractionatedmorse as wasm_from_fractionatedmorse,
 } from "./wasm.js";
 
 import abides from "./rules/index.ts";
@@ -210,4 +212,12 @@ export function toRot13(text: string): string {
 
 export function fromRot13(text: string): string {
   return wasm_from_rot13(text);
+}
+
+export function toFractionatedMorse(key: string, text: string): string {
+  return wasm_to_fractionatedmorse(key, text);
+}
+
+export function fromFractionatedMorse(key: string, text: string): string {
+  return wasm_from_fractionatedmorse(key, text);
 }
