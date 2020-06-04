@@ -62,7 +62,7 @@ console.log(
 function Rules(fn: string, toCheck: any) {
   switch (fn.toLowerCase()) {
     case "vigenere":
-      return isAlphabetical(toCheck);
+      return isAlphabetical(toCheck) ? false : true;
       break;
     case "adfgvx":
       // TODO: ascii check for toCheck[1]
