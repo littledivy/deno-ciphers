@@ -6,7 +6,7 @@
 //! In addition to this, it allows many non-alphabetic symbols to be encoded.
 //!
 //!
-use crate::cipher::Cipher;
+use crate::cipher::ExtraCipher;
 use crate::{alphabet, keygen, morse};
 
 // The fractionated morse trigraph 'alphabet'. Each sequence represents a letter of the alphabet.
@@ -22,7 +22,7 @@ pub struct FractionatedMorse {
     keyed_alphabet: String,
 }
 
-impl Cipher for FractionatedMorse {
+impl ExtraCipher for FractionatedMorse {
     type Key = String;
     type Algorithm = FractionatedMorse;
 

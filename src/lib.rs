@@ -1,7 +1,10 @@
+mod fractionated_morse;
 mod rot13;
 
 use ciphers::*;
 use wasm_bindgen::prelude::wasm_bindgen;
+use crate::cipher::ExtraCipher;
+use fractionated_morse::FractionatedMorse;
 
 pub mod alphabet;
 pub mod cipher;
@@ -39,6 +42,18 @@ pub fn rot13(text: String) -> String {
 pub fn from_rot13(text: String) -> String {
     let ctext = rot13::decrypt(&text);
     ctext
+}
+
+#[wasm_bindgen]
+pub fn fractionatedmorse(key: String, text: String) -> String {
+    let ctext = FractionatedMorse::new(key);
+    ctext.encrypt(&text).unwrap()
+}
+
+#[wasm_bindgen]
+pub fn from_fractionatedmorse(key: String, text: String) -> String {
+    let ctext = FractionatedMorse::new(key);
+    ctext.decrypt(&text).unwrap()
 }
 
 #[wasm_bindgen]

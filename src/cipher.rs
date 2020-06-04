@@ -1,4 +1,4 @@
-pub trait Cipher {
+pub trait ExtraCipher {
     type Key;
     type Algorithm;
 
